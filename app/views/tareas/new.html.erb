@@ -6,7 +6,7 @@
 <%= form_for(@tarea) do |f|%>
 	<div class="form-group">
 		<label>Titulo</label>
-		<%= f.text_field :titulo, class:"form-control" %>
+		<%= f.text_field :titulo, class:"form-control", :required => true %>
 		<!-- <input type="text" name="titulo" class="form-control"> -->		
 	</div>
 
