@@ -11,7 +11,12 @@ class TareasController < ApplicationController
   def create
   @tarea = Tarea.new(titulo: params[:tarea][:titulo], descripcion: params[:tarea][:descripcion])
   @tarea.save
-  #insert into tareas(titulo, descripcion) values (formulario)  	
+  #insert into tareas(titulo, descripcion) values (formulario)  
+  if @tarea.save
+  else render :new
+
+  end
+
   end
 
   def show

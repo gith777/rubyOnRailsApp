@@ -1,3 +1,8 @@
+<% @tarea.errors.full_messages.each do |mensaje| %>
+<p class="alert alert-danger"><%=mensaje%></p>
+
+<% end %>
+
 <%= form_for(@tarea) do |f|%>
 	<div class="form-group">
 		<label>Titulo</label>
