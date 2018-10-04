@@ -33,4 +33,8 @@ class TareasController < ApplicationController
     redirect_to controller: "tareas", action: "index"
   end
 
+  def edit
+    @tarea = Tarea.find(params[:id])
+  end
+
 end

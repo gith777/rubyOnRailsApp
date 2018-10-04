@@ -1,4 +1,4 @@
-<h1>Tarea Nueva</h1>
+<h1>Editar Tarea</h1>
 <% @tarea.error.full_messages.each do |mensaje|%>
 <p class="alert alert-danger"><%=mensaje%></p>
 <%end%>
@@ -15,6 +15,6 @@
 		<%= f.text_area :descripcion, class: "form-control" %>
 	</div>
 
-	<%= f.submit "Crear", class: "btn btn-success"%>
+	<%= f.submit "Editar", class: "btn btn-warning"%>
 
 <% end %>

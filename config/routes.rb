@@ -4,6 +4,8 @@ Rails.application.routes.draw do
  	post 'tareas', to: 'tareas#create'
  	get 'tareas/:id', to:'tareas#show'
  	delete 'tareas/:id', to: 'tareas#destroy'
+ 	get 'tareas/:id/edit', to: 'tareas#edit'
+ 	put 'tareas/id:', to: 'tareas#update'
 
 	get 'bienvenido/index'
 
