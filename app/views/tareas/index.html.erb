@@ -1,8 +1,22 @@
 <h1>Mis tareas</h1>
 
-<ul>
+<table class="table">
+	
+	<thead class="thead-dark">
+		<th>Tarea</th>
+		<th>Ver</th>
+		
+		<th>Eliminar</th>
+	</thead>
+
 	<% @tareas.each do |tarea| %>
-	<li><%=tarea.titulo%></li>
+
+	<tr>
+		<td><%=tarea.titulo%></td>
+		<td><button class="btn btn-warning">Editar</button></td>
+		<td><button class="btn btn-danger">Eliminar</button></td>
+	</tr>
+
 	<% end %>
 
-</ul>
+</table>
