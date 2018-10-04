@@ -3,6 +3,7 @@ Rails.application.routes.draw do
  	get 'tareas/new', to: 'tareas#new'
  	post 'tareas', to: 'tareas#create'
  	get 'tareas/:id', to:'tareas#show'
+ 	delete 'tareas/:id', to: 'tareas#destroy'
 
 	get 'bienvenido/index'
 

@@ -27,4 +27,10 @@ class TareasController < ApplicationController
   	#select * from tareas where id= :id
   end
 
+  def destroy 
+    @tarea = Tarea.find(params[:id])
+    @tarea.destroy
+    redirect_to controller: "tareas", action: "index"
+  end
+
 end
