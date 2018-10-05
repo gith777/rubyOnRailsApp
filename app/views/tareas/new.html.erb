@@ -1,5 +1,5 @@
 <h1>Tarea Nueva</h1>
-<% @tarea.error.full_messages.each do |mensaje|%>
+<% @tarea.errors.full_messages.each do |mensaje|%>
 <p class="alert alert-danger"><%=mensaje%></p>
 <%end%>
 

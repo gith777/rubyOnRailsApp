@@ -37,4 +37,8 @@ class TareasController < ApplicationController
     @tarea = Tarea.find(params[:id])
   end
 
+  def update
+  
+  end
+
 end

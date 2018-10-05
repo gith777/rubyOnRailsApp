@@ -1,9 +1,10 @@
 <h1>Editar Tarea</h1>
-<% @tarea.error.full_messages.each do |mensaje|%>
+<% @tarea.errors.full_messages.each do |mensaje|%>
 <p class="alert alert-danger"><%=mensaje%></p>
 <%end%>
 
-<%= form_for(@tarea) do |f|%>
+
+<%= form_for(@tarea, url: {controller: "tareas", action: "update"},method: "put") do |f|%>
 	<div class="form-group">
 		<label>Titulo</label>
 		<%= f.text_field :titulo, class:"form-control", :required => true %>
