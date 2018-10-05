@@ -13,7 +13,7 @@
 
 	<tr>
 		<td><%= link_to tarea.titulo, {controller: "tareas", action: "show", id: tarea.id} %></td>
-		<td><button class="btn btn-warning">Editar</button></td>
+		<td><%=link_to "Editar", {controller: "tareas", action: "edit", id: tarea.id}, class: "btn btn-warning" %></td>
 
 		<td><%= link_to "Eliminar", {controller: "tareas", action: "destroy", id: tarea.id}, method: "delete", data: {confirm: "estas seguro?"}, class:"btn btn-danger" %></td>
 	</tr>
