@@ -5,7 +5,8 @@ Rails.application.routes.draw do
  	get 'tareas/:id', to:'tareas#show'
  	delete 'tareas/:id', to: 'tareas#destroy'
  	get 'tareas/:id/edit', to: 'tareas#edit'
- 	put 'tareas/id:', to: 'tareas#update'
+
+ 	put 'tareas/:id', to: 'tareas#update'
 
 	get 'bienvenido/index'
 
