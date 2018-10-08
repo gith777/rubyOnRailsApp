@@ -1,5 +1,6 @@
 class TareasController < ApplicationController
 
+  before_action :authenticate_usuario!, except: [:index, :show]
   before_action :set_tarea, except: [:index, :new, :create] #esto es un callback y se va a ejecutar
   #en todos excepto lo que estan en los corchetes...
 
@@ -14,6 +15,7 @@ class TareasController < ApplicationController
   
   def create
   @tarea = Tarea.new(tarea_params)
+  @tarea.usuario= current_usuario
   
   #insert into tareas(titulo, descripcion) values (formulario)  
   if @tarea.save
