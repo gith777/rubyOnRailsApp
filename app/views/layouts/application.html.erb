@@ -16,23 +16,51 @@
 
   			<li class="nav-item">
   				<!-- <a class="nav-link">Inicio</a> --> 
-  				<%= link_to "Inicio", {controller: "bienvenido", action: "index"}, class: "nav-link" %>				
+  				<%= link_to "Inicio", bienvenido_index_path, class: "nav-link" %>				
   			</li>
 
   			<li class="nav-item">
   				<!-- <a class="nav-link">Tareas</a> -->
-  				<%= link_to "tareas", {controller: "tareas", action: "index"}, class: "nav-link" %> 				
+  				<%= link_to "tareas", tareas_path , class: "nav-link" %> 				
   			</li >
   				
   			<li class="nav-item">
-				<%= link_to "crear tarea", {controller: "tareas", action: "new"}, class: "nav-link" %>
+				<%= link_to "crear tarea", new_tarea_path, class: "nav-link" %>
   			</li>
+
+
+        <% if usuario_signed_in? %>
+
+        <li class="nav-item">
+
+          <%= link_to "Cerrar Sesion", destroy_usuario_session_path, method: "delete", class: "nav-link" %>
+
+        </li>
+      </ul>
+      <% else %>
+
+      <li class="nav-item">
+
+        <%= link_to "Iniciar Sesión", new_usuario_session_path, class: "nav-link" %>
+        
+      </li>
   			
+        <li class="nav-item">
+          <%= link_to "Crear cuenta", new_usuario_registration_path, class: "nav-link"%>
+          
+        </li>
   			
-  		</ul>
+<% end %>
+      
+</ul>
   		
   	</nav>
+
+    <p><%= alert %></p>
+    <p><%= notice %></p>
+
     <%= yield %>
+
      </div>
   </body>
 </html>
