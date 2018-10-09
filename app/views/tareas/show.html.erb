@@ -16,3 +16,13 @@
 <p>Escrito por: <%= @tarea.usuario.email %></p>
 
 <% end %>
+
+<h3>Agregar comentario</h3>
+<%= render "comentarios/form" %>
+
+<h3>Comentarios</h3>
+<ul>
+	<% @tarea.comentarios.each do |comentario| %>
+	<li><%= comentario.contenido %></li>
+	<% end %>
+</ul>
