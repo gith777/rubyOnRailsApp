@@ -19,6 +19,8 @@ class TareasController < ApplicationController
   
   #insert into tareas(titulo, descripcion) values (formulario)  
   if @tarea.save
+
+    CorreosMailer.notificacion(@tarea).deliver_now
     redirect_to  @tarea #action show
     
 
